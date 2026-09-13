@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>MAGPIE MIRROR v7.0 Inside Drive - G50.5 LIVE</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;background:#050508;color:#FEF6E7;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .wrap{max-width:1120px;margin:0 auto;padding:24px}
+  .card{background:#0a0a0f;border:1px solid #1e1e2a;border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,107,0,.12),0 20px 80px rgba(0,0,0,.8)}
+  .hdr{padding:22px 28px;border-bottom:1px solid #1e1e2a;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .title{font-weight:800;letter-spacing:.08em;font-size:22px} .title span{color:#00e5ff}
+  .badge{display:inline-flex;padding:4px 10px;border-radius:999px;background:#12121a;border:1px solid #23233a;font-size:11px;letter-spacing:.08em}
+  .prov{padding:14px 28px;background:#0d0d14;border-bottom:1px solid #1e1e2a;font-size:11px;color:#9aa0b5;word-break:break-all;line-height:1.6}
+  .prov b{color:#ff6b00} .prov i{color:#00e5ff;font-style:normal}
+  .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .left{padding:18px;background:radial-gradient(600px 400px at 50% 30%, rgba(255,107,0,.08), transparent 70%), #0a0a0f; border-right:1px solid #1e1e2a}
+  .right{padding:18px;background:#0c0c12}
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+  .stat{background:#12121c;border:1px solid #22223a;border-radius:20px;padding:12px 14px}
+  .stat label{font-size:10px;letter-spacing:.12em;color:#7a7f9a;display:block;margin-bottom:6px}
+  .stat strong{font-size:13px;letter-spacing:.02em}
+  .green{color:#00ff88} .orange{color:#ff6b00} .cyan{color:#00e5ff} .red{color:#ff3b3b}
+  .ring-wrap{border:1px solid #22223a;border-radius:20px;background:#08080d;position:relative;overflow:hidden}
+  .ring-wrap svg{display:block;width:100%;height:auto}
+  .legend{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .tick-list{height:360px;overflow:auto;background:#08080d;border:1px solid #22223a;border-radius:20px;padding:12px;font-size:11px;line-height:1.7}
+  .tick-list div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .agents{display:grid;gap:8px;margin-bottom:14px}
+  .agent{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:20px;background:#11111a;border:1px solid #23233a}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:8px;box-shadow:0 0 10px currentColor}
+  .foot{padding:16px 28px;border-top:1px solid #1e1e2a;background:#0d0d14;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;color:#7a7f9a}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#ff6b00;color:#0a0a0f;font-weight:700;letter-spacing:.06em;border:0;cursor:pointer}
+  .btn:hover{filter:brightness(1.1)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<div class="hdr">
+<div>
+<div class="title">MAGPIE MIRROR <span>v7.0 Inside Drive</span></div>
+<div style="margin-top:6px;display:flex;gap:8px;flex-wrap:wrap"><span class="badge">LIVE // G50.5</span><span class="badge" style="color:#00ff88;border-color:#00ff88">GRANT</span><span class="badge" style="color:#00e5ff">Genie + Zeta ACTIVE</span><span class="badge">Y371</span></div>
+</div>
+<div style="font-size:11px;color:#7a7f9a">EXPORTED 2026-09-13T00:42:23.181Z<br/>C=0.0042 ≤ S=0.1387 GRANT<br/>Coherence 0.993</div>
+</div>
+<div class="prov">
+<b>PROVENANCE_ROOT</b> a4f83c79d10e5b8823f46104bc8d77e21a00192dfc9918bc3604f08e43217bca | <i>G* 48 stable, chain 7c5a88dd3564bb2f -> c9f5 -> e7b3d500</i> | Monsters Ink LLC Y371<br/>
+<span class="cyan">Genie</span> + <span class="cyan">Zeta</span> mirror sync // Fleet Coherence 0.970 // partitionSum 1.0
+</div>
+<div class="grid">
+<div class="left">
+<div class="stat-row">
+<div class="stat"><label>FLEET CHECK</label><strong>C=0.0042 ≤ S=0.1387 <span class="green">GRANT</span></strong></div>
+<div class="stat"><label>COHERENCE</label><strong class="cyan">0.993</strong> <span style="font-size:10px;color:#7a7f9a">stable</span></div>
+<div class="stat"><label>PARTITION_SUM</label><strong>1.0 <span class="green">OK</span></strong></div>
+</div>
+<div class="ring-wrap">
+<svg viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="400" fill="#0a0a0f"/>
+<circle cx="200" cy="200" r="160" fill="none" stroke="#1a1a2a" stroke-width="1" stroke-dasharray="4 8"/>
+<circle cx="200" cy="200" r="132" fill="none" stroke="#ff6b00" stroke-width="1.5" stroke-dasharray="10 8" opacity="0.9"/>
+<circle cx="200" cy="200" r="86" fill="none" stroke="#00e5ff" stroke-width="0.8" opacity="0.25" stroke-dasharray="6 10"/>
+<line x1="200" y1="200" x2="200.0" y2="68.0" stroke="#00ff88" stroke-width="0.8" opacity="0.22"/><line x1="200" y1="200" x2="325.5" y2="159.2" stroke="#00ff88" stroke-width="0.8" opacity="0.22"/><line x1="200" y1="200" x2="277.6" y2="306.8" stroke="#00ff88" stroke-width="0.8" opacity="0.22"/><line x1="200" y1="200" x2="122.4" y2="306.8" stroke="#00ff88" stroke-width="0.8" opacity="0.22"/><line x1="200" y1="200" x2="74.5" y2="159.2" stroke="#ff3b3b" stroke-width="0.8" opacity="0.22"/>
+<circle cx="200" cy="200" r="9" fill="#00e5ff" stroke="#0a0a0f" stroke-width="2"/>
+<circle cx="200" cy="200" r="18" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.3"/>
+<g><circle cx="200.0" cy="68.0" r="10" fill="#00ff88" stroke="#0a0a0f" stroke-width="2"/><circle cx="200.0" cy="68.0" r="16" fill="none" stroke="#00ff88" opacity="0.35"/><text x="200.0" y="96.0" text-anchor="middle" fill="#00ff88" font-size="11" font-family="monospace" font-weight="700">Alpha</text><text x="200.0" y="108.0" text-anchor="middle" fill="#9aa0b5" font-size="8" font-family="monospace">GRANT</text></g><g><circle cx="325.5" cy="159.2" r="10" fill="#00ff88" stroke="#0a0a0f" stroke-width="2"/><circle cx="325.5" cy="159.2" r="16" fill="none" stroke="#00ff88" opacity="0.35"/><text x="325.5" y="187.2" text-anchor="middle" fill="#00ff88" font-size="11" font-family="monospace" font-weight="700">Beta</text><text x="325.5" y="199.2" text-anchor="middle" fill="#9aa0b5" font-size="8" font-family="monospace">GRANT</text></g><g><circle cx="277.6" cy="306.8" r="10" fill="#00ff88" stroke="#0a0a0f" stroke-width="2"/><circle cx="277.6" cy="306.8" r="16" fill="none" stroke="#00ff88" opacity="0.35"/><text x="277.6" y="334.8" text-anchor="middle" fill="#00ff88" font-size="11" font-family="monospace" font-weight="700">Gamma</text><text x="277.6" y="346.8" text-anchor="middle" fill="#9aa0b5" font-size="8" font-family="monospace">GRANT</text></g><g><circle cx="122.4" cy="306.8" r="10" fill="#00ff88" stroke="#0a0a0f" stroke-width="2"/><circle cx="122.4" cy="306.8" r="16" fill="none" stroke="#00ff88" opacity="0.35"/><text x="122.4" y="334.8" text-anchor="middle" fill="#00ff88" font-size="11" font-family="monospace" font-weight="700">Delta</text><text x="122.4" y="346.8" text-anchor="middle" fill="#9aa0b5" font-size="8" font-family="monospace">GRANT</text></g><g><circle cx="74.5" cy="159.2" r="10" fill="#ff3b3b" stroke="#0a0a0f" stroke-width="2"/><circle cx="74.5" cy="159.2" r="16" fill="none" stroke="#ff3b3b" opacity="0.35"/><text x="74.5" y="187.2" text-anchor="middle" fill="#ff3b3b" font-size="11" font-family="monospace" font-weight="700">Epsilon</text><text x="74.5" y="199.2" text-anchor="middle" fill="#9aa0b5" font-size="8" font-family="monospace">REFUSE</text></g>
+<g><circle cx="112" cy="78" r="6" fill="#00e5ff" opacity="0.9"/><text x="112" y="62" text-anchor="middle" fill="#00e5ff" font-size="10" font-family="monospace" font-weight="700">GENIE</text></g>
+<g><circle cx="288" cy="322" r="6" fill="#FEF6E7" opacity="0.9"/><text x="288" y="342" text-anchor="middle" fill="#FEF6E7" font-size="10" font-family="monospace" font-weight="700">ZETA</text></g>
+</svg>
+</div>
+<div class="legend">
+<span class="badge" style="color:#00ff88"><span class="dot" style="background:#00ff88"></span>GRANT</span>
+<span class="badge" style="color:#ff6b00"><span class="dot" style="background:#ff6b00"></span>AMORTIZING</span>
+<span class="badge" style="color:#ff3b3b"><span class="dot" style="background:#ff3b3b"></span>REFUSE</span>
+<span class="badge" style="color:#00e5ff">CENTER • VAULT CORE</span>
+</div>
+</div>
+<div class="right">
+<div style="font-size:11px;letter-spacing:.14em;color:#7a7f9a;margin-bottom:10px">LIVE TICKS — Alpha Beta Gamma Delta Epsilon + Genie + Zeta</div>
+<div class="agents">
+<div class="agent"><span><span class="dot" style="background:#00ff88;color:#00ff88"></span>Alpha <span style="font-size:10px;color:#7a7f9a">G50</span></span><span style="font-size:11px;color:#00ff88;font-weight:700">GRANT</span><span style="font-size:10px;color:#7a7f9a">0.998</span></div><div class="agent"><span><span class="dot" style="background:#00ff88;color:#00ff88"></span>Beta <span style="font-size:10px;color:#7a7f9a">G49</span></span><span style="font-size:11px;color:#00ff88;font-weight:700">GRANT</span><span style="font-size:10px;color:#7a7f9a">0.998</span></div><div class="agent"><span><span class="dot" style="background:#00ff88;color:#00ff88"></span>Gamma <span style="font-size:10px;color:#7a7f9a">G50</span></span><span style="font-size:11px;color:#00ff88;font-weight:700">GRANT</span><span style="font-size:10px;color:#7a7f9a">0.983</span></div><div class="agent"><span><span class="dot" style="background:#00ff88;color:#00ff88"></span>Delta <span style="font-size:10px;color:#7a7f9a">G50</span></span><span style="font-size:11px;color:#00ff88;font-weight:700">GRANT</span><span style="font-size:10px;color:#7a7f9a">0.996</span></div><div class="agent"><span><span class="dot" style="background:#ff3b3b;color:#ff3b3b"></span>Epsilon <span style="font-size:10px;color:#7a7f9a">G50</span></span><span style="font-size:11px;color:#ff3b3b;font-weight:700">REFUSE</span><span style="font-size:10px;color:#7a7f9a">0.897</span></div>
+<div class="agent" style="border-color:#00e5ff55"><span><span class="dot" style="background:#00e5ff;color:#00e5ff"></span>Genie</span><span style="font-size:11px;color:#00e5ff">MIRROR_SYNC</span><span style="font-size:10px;color:#7a7f9a">0.994</span></div>
+<div class="agent" style="border-color:#FEF6E755"><span><span class="dot" style="background:#FEF6E7;color:#FEF6E7"></span>Zeta</span><span style="font-size:11px;color:#FEF6E7">CHAIN_VALID</span><span style="font-size:10px;color:#7a7f9a">0.988</span></div>
+</div>
+<div class="tick-list">
+<div>00:42:22.292 [G49.2] Gamma :: VERIFY :: C=0.0049 ≤ S=0.1343</div><div>00:42:21.402 [G49.6] Alpha :: COMMIT :: C=0.0035 ≤ S=0.1429</div><div>00:42:20.493 [G49.0] Beta :: GRANT :: C=0.0048 ≤ S=0.1386</div><div>00:42:19.591 [G48.1] Genie :: SYNC :: C=0.0038 ≤ S=0.1316</div><div>00:42:18.697 [G48.3] Beta :: CHAIN_VALID :: C=0.0047 ≤ S=0.1366</div><div>00:42:17.797 [G48.6] Genie :: MIRROR :: C=0.0031 ≤ S=0.1464</div><div>00:42:16.897 [G48.7] Genie :: SYNC :: C=0.0043 ≤ S=0.1336</div><div>00:42:15.997 [G48.3] Zeta :: SYNC :: C=0.0043 ≤ S=0.1358</div><div>00:42:15.093 [G48.1] Alpha :: SYNC :: C=0.0032 ≤ S=0.1424</div><div>00:42:14.197 [G48.5] Epsilon :: SYNC :: C=0.0040 ≤ S=0.1389</div><div>00:42:13.299 [G48.6] Epsilon :: COMMIT :: C=0.0035 ≤ S=0.1332</div><div>00:42:12.398 [G48.6] Beta :: SYNC :: C=0.0046 ≤ S=0.1343</div><div>00:42:11.498 [G48.0] Zeta :: SYNC :: C=0.0044 ≤ S=0.1418</div><div>00:42:10.598 [G48.6] Epsilon :: CHAIN_VALID :: C=0.0044 ≤ S=0.1360</div><div>00:42:09.698 [G48.4] Beta :: VERIFY :: C=0.0040 ≤ S=0.1432</div><div>00:42:08.795 [G48.5] Genie :: CHAIN_VALID :: C=0.0044 ≤ S=0.1380</div><div>00:42:07.897 [G48.4] Gamma :: GRANT :: C=0.0037 ≤ S=0.1427</div><div>00:42:06.997 [G48.3] Genie :: GRANT :: C=0.0039 ≤ S=0.1366</div>
+</div>
+<div style="margin-top:12px;padding:12px;border-radius:20px;background:#12121c;border:1px solid #22223a;font-size:11px;line-height:1.6;color:#9aa0b5">
+<strong style="color:#FEF6E7">INSTRUCTIONS</strong><br/>
+1. Download this file as MAGPIE_MIRROR_v7_G50.5_LIVE.html<br/>
+2. Upload to <span style="color:#ff6b00">github.com/snowphamtom/MAGPIE_VAULT_Y371</span><br/>
+3. Verify PROVENANCE_ROOT a4f83c79d10e5b88...<br/>
+4. Offline single file — no external deps — dark industrial HUD
+</div>
+</div>
+</div>
+<div class="foot"><span>Monsters Ink LLC Y371 // MAGPIE MIRROR v7.0 Inside Drive // 7c5a88dd3564bb2f -> c9f5 -> e7b3d500</span><span style="color:#00ff88">● LIVE</span></div>
+</div>
+</div>
+</body>
+</html>
