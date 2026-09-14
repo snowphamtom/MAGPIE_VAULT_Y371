@@ -53,6 +53,13 @@
   .meter{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);
     font-variant-numeric:tabular-nums}
   .meter b{color:var(--cream);font-weight:500}
+  
+  .shop{display:flex;gap:10px;flex-wrap:wrap;pointer-events:auto}
+  .shop a{font-size:10px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;
+    color:var(--cream);border:1px solid var(--line);padding:8px 12px;background:rgba(12,12,14,.55);
+    border-radius:2px}
+  .shop a:hover{border-color:var(--amber);color:var(--amber)}
+
   .door{pointer-events:auto;appearance:none;border:1px solid var(--line);background:rgba(12,12,14,.55);
     color:var(--mute);font:inherit;font-size:10px;letter-spacing:.28em;text-transform:lowercase;
     padding:10px 16px;border-radius:999px;cursor:pointer;backdrop-filter:blur(8px);
@@ -114,6 +121,11 @@
   </div>
   <div class="bottom">
     <div class="meter"><span id="c">c</span> <b id="cmp">≤</b> <span id="s">s</span> · <span id="count">0</span> shards</div>
+    <div class="shop" aria-label="shop">
+      <a href="https://monsters-ink-107139.square.site/product/taylor-heller-vault-suite/ZQEYDDVJQCEZ5VUXXFTCSZ4B" target="_blank" rel="noopener">vault $499</a>
+      <a href="https://monsters-ink-107139.square.site/product/t-e-residual-honesty-brief-pdf-1-1-/GRQ576XXBR5K6ISNWQMMDMCT" target="_blank" rel="noopener">t&amp;e $1k</a>
+      <a href="https://monsters-ink-107139.square.site/" target="_blank" rel="noopener">shop</a>
+    </div>
     <button type="button" class="door" id="door" title="source">source</button>
   </div>
 </div>
