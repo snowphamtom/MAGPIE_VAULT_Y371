@@ -2,119 +2,339 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Magpie Vault Y371 · LICENSE ONLY</title>
-<meta name="description" content="Magpie Vault Y371 — Taylor Heller / Monsters Ink. Public GitHub vault face. LICENSE ONLY · NEVER SELL. C ≤ S forensic mirror."/>
-<meta property="og:title" content="Magpie Vault Y371 · LICENSE ONLY"/>
-<meta property="og:description" content="Public GitHub vault for Monsters Ink. License only — never sell. Claim Check lives on Convex."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://snowphamtom.github.io/MAGPIE_VAULT_Y371/"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>vault</title>
+<meta name="description" content="the vault"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta property="og:title" content="vault"/>
+<meta property="og:description" content="the vault"/>
+<meta name="theme-color" content="#070708"/>
 <style>
   :root{
-    --void:#0B0B0C; --panel:#121216; --line:#2A2A2E;
-    --cream:#F4F1EA; --mute:#A1A1AA; --amber:#D4A24C; --cyan:#7AD4FF;
-    --grant:#3DDC97; --refuse:#FF5C5C;
+    --void:#070708; --ink:#0c0c0e; --line:rgba(255,255,255,.08);
+    --cream:#F4F1EA; --mute:#8a8793; --amber:#D4A24C; --cyan:#7AD4FF;
+    --grant:#3DDC97; --refuse:#FF5C5C; --gold:rgba(212,162,76,.9);
   }
-  *{box-sizing:border-box} html,body{margin:0;background:var(--void);color:var(--cream);
-    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-  .tick{position:fixed;width:14px;height:14px;opacity:.35;z-index:5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:var(--void);color:var(--cream);
+    font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    overflow:hidden;touch-action:none}
+  canvas#field{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0}
+  .vignette{pointer-events:none;position:fixed;inset:0;z-index:1;
+    background:radial-gradient(ellipse at 50% 42%,transparent 0%,transparent 38%,rgba(0,0,0,.55) 78%,rgba(0,0,0,.88) 100%)}
+  .tick{position:fixed;width:16px;height:16px;opacity:.4;z-index:4;pointer-events:none}
   .tick::before,.tick::after{content:"";position:absolute;background:var(--mute)}
-  .tick::before{width:14px;height:1px;top:6px;left:0}
-  .tick::after{width:1px;height:14px;top:0;left:6px}
-  .tl{top:18px;left:18px}.tr{top:18px;right:18px}.bl{bottom:18px;left:18px}.br{bottom:18px;right:18px}
-  .wrap{max-width:1080px;margin:0 auto;padding:48px 24px 72px}
-  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
-  h1{font-size:clamp(28px,5vw,44px);font-weight:700;letter-spacing:-.02em;margin:0 0 10px;line-height:1.1}
-  .rule{width:72px;height:2px;background:var(--amber);margin:18px 0 20px;border:0}
-  .lede{font-size:17px;line-height:1.5;color:var(--mute);max-width:38rem;margin:0 0 28px}
-  .lede strong{color:var(--cream);font-weight:600}
-  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
-  .badge{font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--line);
-    border-radius:999px;background:var(--panel);color:var(--mute)}
-  .badge.amber{color:var(--amber);border-color:rgba(212,162,76,.45)}
-  .badge.grant{color:var(--grant);border-color:rgba(61,220,151,.35)}
-  .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}
-  @media(max-width:860px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-  .card h2{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0;padding:16px 18px 0}
-  .viz{padding:8px 12px 18px}
-  .viz svg{width:100%;height:auto;display:block}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 18px 18px}
-  @media(max-width:520px){.stats{grid-template-columns:1fr}}
-  .stat{background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:12px;padding:12px}
-  .stat label{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
-  .stat b{font-size:14px;font-weight:600}
-  .links{padding:8px 18px 20px;display:grid;gap:10px}
-  a.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 14px;border-radius:12px;
-    border:1px solid var(--line);background:rgba(0,0,0,.25);color:var(--cream);text-decoration:none}
-  a.row:hover{border-color:rgba(212,162,76,.55)}
-  a.row span{font-size:13px;font-weight:600}
-  a.row small{font-size:11px;color:var(--mute);letter-spacing:.04em}
-  .note{margin-top:28px;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:rgba(212,162,76,.04);
-    font-size:13px;line-height:1.55;color:var(--mute)}
-  .note strong{color:var(--amber);font-weight:600}
-  footer{margin-top:36px;font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-  footer .live{color:var(--grant)}
+  .tick::before{width:16px;height:1px;top:7px;left:0}
+  .tick::after{width:1px;height:16px;top:0;left:7px}
+  .tl{top:16px;left:16px}.tr{top:16px;right:16px}.bl{bottom:16px;left:16px}.br{bottom:16px;right:16px}
+
+  .hud{position:fixed;inset:0;z-index:3;pointer-events:none;display:grid;
+    grid-template-rows:auto 1fr auto;padding:28px 28px 24px}
+  .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+  .sig{font-size:10px;letter-spacing:.42em;text-transform:lowercase;color:var(--mute)}
+  .phase{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);
+    font-variant-numeric:tabular-nums}
+  .center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+    transform:translateY(-4vh)}
+  .seal{position:relative;width:min(42vw,280px);aspect-ratio:1;display:grid;place-items:center}
+  .seal svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 28px rgba(212,162,76,.18))}
+  .word{font-size:clamp(28px,6vw,52px);font-weight:600;letter-spacing:.38em;text-transform:lowercase;
+    margin-left:.38em;color:var(--cream);text-shadow:0 0 40px rgba(212,162,76,.25)}
+  .sub{font-size:11px;letter-spacing:.32em;text-transform:lowercase;color:var(--mute);opacity:.85}
+  .lanes{display:flex;gap:8px;margin-top:8px}
+  .lane{height:3px;width:36px;border-radius:2px;background:var(--line);overflow:hidden;position:relative}
+  .lane>i{position:absolute;inset:0 auto 0 0;width:40%;background:var(--amber);
+    animation:lane 2.4s ease-in-out infinite}
+  .lane:nth-child(2)>i{animation-delay:.4s;background:var(--cyan);width:55%}
+  .lane:nth-child(3)>i{animation-delay:.85s;background:var(--grant);width:30%}
+  @keyframes lane{0%,100%{transform:translateX(-120%)}50%{transform:translateX(220%)}}
+
+  .bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+  .meter{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);
+    font-variant-numeric:tabular-nums}
+  .meter b{color:var(--cream);font-weight:500}
+  .door{pointer-events:auto;appearance:none;border:1px solid var(--line);background:rgba(12,12,14,.55);
+    color:var(--mute);font:inherit;font-size:10px;letter-spacing:.28em;text-transform:lowercase;
+    padding:10px 16px;border-radius:999px;cursor:pointer;backdrop-filter:blur(8px);
+    transition:border-color .2s,color .2s}
+  .door:hover{border-color:rgba(212,162,76,.55);color:var(--cream)}
+
+  .spin-a{animation:spin 48s linear infinite}
+  .spin-b{animation:spin 28s linear infinite reverse}
+  .spin-c{animation:spin 16s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .pulse{animation:pulse 3.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+
+  @media (prefers-reduced-motion:reduce){
+    .spin-a,.spin-b,.spin-c,.lane>i,.pulse{animation:none!important}
+  }
 </style>
 </head>
 <body>
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="vignette"></div>
 <div class="tick tl"></div><div class="tick tr"></div><div class="tick bl"></div><div class="tick br"></div>
-<main class="wrap">
-  <div class="eyebrow">Monsters Ink · Taylor Heller</div>
-  <h1>Magpie Vault Y371</h1>
-  <hr class="rule"/>
-  <p class="lede"><strong>LICENSE ONLY · NEVER SELL.</strong> Public GitHub vault face — not a Square checkout. Claim Check sorts money claims under C ≤ S on Convex.</p>
-  <div class="badges">
-    <span class="badge amber">License only</span>
-    <span class="badge grant">C ≤ S</span>
-    <span class="badge">Y371</span>
-    <span class="badge">GitHub Pages</span>
+
+<div class="hud">
+  <div class="top">
+    <div class="sig">the vault</div>
+    <div class="phase" id="phase">gather</div>
   </div>
-  <div class="grid">
-    <section class="card">
-      <h2>Fleet seal</h2>
-      <div class="viz">
-        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-label="C less than or equal to S fleet ring">
-          <rect width="400" height="400" fill="#0B0B0C"/>
-          <circle cx="200" cy="200" r="158" fill="none" stroke="#2A2A2E" stroke-width="1" stroke-dasharray="3 7"/>
-          <circle cx="200" cy="200" r="128" fill="none" stroke="#D4A24C" stroke-width="1.4" stroke-dasharray="9 7" opacity=".9"/>
-          <circle cx="200" cy="200" r="84" fill="none" stroke="#7AD4FF" stroke-width=".8" opacity=".28" stroke-dasharray="5 9"/>
-          <line x1="200" y1="200" x2="200" y2="72" stroke="#3DDC97" stroke-width=".8" opacity=".28"/>
-          <line x1="200" y1="200" x2="322" y2="162" stroke="#3DDC97" stroke-width=".8" opacity=".28"/>
-          <line x1="200" y1="200" x2="274" y2="304" stroke="#3DDC97" stroke-width=".8" opacity=".28"/>
-          <line x1="200" y1="200" x2="126" y2="304" stroke="#3DDC97" stroke-width=".8" opacity=".28"/>
-          <line x1="200" y1="200" x2="78" y2="162" stroke="#FF5C5C" stroke-width=".8" opacity=".28"/>
-          <circle cx="200" cy="200" r="8" fill="#7AD4FF" stroke="#0B0B0C" stroke-width="2"/>
-          <circle cx="200" cy="72" r="9" fill="#3DDC97"/><text x="200" y="98" text-anchor="middle" fill="#3DDC97" font-size="11" font-family="ui-monospace,monospace">GRANT</text>
-          <circle cx="322" cy="162" r="9" fill="#3DDC97"/><text x="322" y="188" text-anchor="middle" fill="#3DDC97" font-size="11" font-family="ui-monospace,monospace">GRANT</text>
-          <circle cx="274" cy="304" r="9" fill="#3DDC97"/><text x="274" y="330" text-anchor="middle" fill="#3DDC97" font-size="11" font-family="ui-monospace,monospace">GRANT</text>
-          <circle cx="126" cy="304" r="9" fill="#3DDC97"/><text x="126" y="330" text-anchor="middle" fill="#3DDC97" font-size="11" font-family="ui-monospace,monospace">GRANT</text>
-          <circle cx="78" cy="162" r="9" fill="#FF5C5C"/><text x="78" y="188" text-anchor="middle" fill="#FF5C5C" font-size="11" font-family="ui-monospace,monospace">REFUSE</text>
-          <text x="200" y="214" text-anchor="middle" fill="#A1A1AA" font-size="10" font-family="ui-monospace,monospace">VAULT CORE</text>
-        </svg>
-      </div>
-      <div class="stats">
-        <div class="stat"><label>Law</label><b>claimed ≤ source</b></div>
-        <div class="stat"><label>Seal</label><b style="color:var(--grant)">GRANT / REFUSE</b></div>
-        <div class="stat"><label>Channel</label><b>GitHub · not Square</b></div>
-      </div>
-    </section>
-    <section class="card">
-      <h2>Paths</h2>
-      <div class="links">
-        <a class="row" href="https://github.com/snowphamtom/MAGPIE_VAULT_Y371"><span>GitHub repo</span><small>source</small></a>
-        <a class="row" href="https://snowphamtom.github.io/MAGPIE_VAULT_Y371/"><span>This vault face</span><small>Pages</small></a>
-        <a class="row" href="https://quirky-rhinoceros-204.convex.site/"><span>Claim Check live</span><small>C ≤ S</small></a>
-        <a class="row" href="https://vibeapps.dev/s/claim-check"><span>All Gas listing</span><small>vibeapps</small></a>
-        <a class="row" href="https://monsters-ink-107139.square.site"><span>Square shop</span><small>T&amp;E $1k only</small></a>
-      </div>
-    </section>
+  <div class="center">
+    <div class="seal" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="g" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#D4A24C" stop-opacity=".22"/>
+            <stop offset="55%" stop-color="#0B0B0C" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#0B0B0C" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="200" cy="200" r="190" fill="url(#g)"/>
+        <g class="spin-a" style="transform-origin:200px 200px">
+          <circle cx="200" cy="200" r="168" fill="none" stroke="#2A2A2E" stroke-width="1" stroke-dasharray="2 10"/>
+          <circle cx="200" cy="200" r="148" fill="none" stroke="#D4A24C" stroke-width="1.2" stroke-dasharray="14 9" opacity=".85"/>
+        </g>
+        <g class="spin-b" style="transform-origin:200px 200px">
+          <circle cx="200" cy="200" r="118" fill="none" stroke="#7AD4FF" stroke-width="1" stroke-dasharray="3 8" opacity=".55"/>
+          <path d="M200 82 L208 118 L200 112 L192 118 Z" fill="#D4A24C" opacity=".7"/>
+        </g>
+        <g class="spin-c" style="transform-origin:200px 200px">
+          <circle cx="200" cy="200" r="86" fill="none" stroke="#3DDC97" stroke-width="1.1" stroke-dasharray="22 14" opacity=".5"/>
+        </g>
+        <circle cx="200" cy="200" r="54" fill="none" stroke="#F4F1EA" stroke-width="1.4" opacity=".35" class="pulse"/>
+        <circle cx="200" cy="200" r="8" fill="#D4A24C"/>
+        <circle cx="200" cy="200" r="18" fill="none" stroke="#D4A24C" stroke-width="1" opacity=".6"/>
+      </svg>
+    </div>
+    <div class="word">vault</div>
+    <div class="sub">continuous organize</div>
+    <div class="lanes" aria-hidden="true"><div class="lane"><i></i></div><div class="lane"><i></i></div><div class="lane"><i></i></div></div>
   </div>
-  <div class="note"><strong>Commercial map:</strong> Vault Suite is LICENSE ONLY — never sell. Square Online Vault is unpublished. T&amp;E residual-honesty brief remains the sell SKU on Square. Archive mirror HTML stays in-repo for provenance.</div>
-  <footer>
-    <span>Monsters Ink LLC · Magpie Vault Y371</span>
-    <span class="live">● LIVE</span>
-  </footer>
-</main>
+  <div class="bottom">
+    <div class="meter"><span id="c">c</span> <b id="cmp">≤</b> <span id="s">s</span> · <span id="count">0</span> shards</div>
+    <button type="button" class="door" id="door" title="source">source</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const canvas = document.getElementById('field');
+  const ctx = canvas.getContext('2d');
+  const phaseEl = document.getElementById('phase');
+  const countEl = document.getElementById('count');
+  const cmpEl = document.getElementById('cmp');
+  const door = document.getElementById('door');
+  door.addEventListener('click', () => {
+    window.open('https://github.com/snowphamtom/MAGPIE_VAULT_Y371', '_blank', 'noopener');
+  });
+
+  let W=0,H=0,dpr=1, mx=0, my=0, t0=performance.now();
+  const PHASES = ['gather','sort','scatter','rebind'];
+  let phaseIdx = 0, phaseT = 0;
+  const PHASE_LEN = [4.2, 3.6, 3.2, 2.8];
+
+  const N = 96;
+  const shards = [];
+  const trails = [];
+  const lanesY = [];
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio||1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = Math.floor(W*dpr); canvas.height = Math.floor(H*dpr);
+    canvas.style.width = W+'px'; canvas.style.height = H+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    lanesY.length = 0;
+    for(let i=0;i<5;i++) lanesY.push(H*0.28 + i*(H*0.09));
+  }
+  window.addEventListener('resize', resize);
+  window.addEventListener('pointermove', e => { mx = (e.clientX/W - .5); my = (e.clientY/H - .5); }, {passive:true});
+  resize();
+
+  const colors = ['#D4A24C','#7AD4FF','#3DDC97','#F4F1EA','#FF5C5C','#A78BFA'];
+  function seed(){
+    shards.length = 0;
+    for(let i=0;i<N;i++){
+      shards.push({
+        x: Math.random()*W, y: Math.random()*H,
+        vx: (Math.random()-.5)*1.4, vy: (Math.random()-.5)*1.4,
+        w: 6+Math.random()*22, h: 3+Math.random()*10,
+        rot: Math.random()*Math.PI*2, vr: (Math.random()-.5)*0.04,
+        c: colors[i%colors.length], a: .35+Math.random()*.55,
+        lane: i%5, home: i, kind: Math.random()<.18 ? 'chip' : 'bar'
+      });
+    }
+  }
+  seed();
+
+  function targetFor(p, ph){
+    const cx = W*0.5 + mx*28, cy = H*0.42 + my*18;
+    if(ph==='gather'){
+      const ang = (p.home/N)*Math.PI*2 + phaseT*0.35;
+      const r = 70 + (p.home%7)*18;
+      return {x: cx + Math.cos(ang)*r, y: cy + Math.sin(ang)*r*0.72};
+    }
+    if(ph==='sort'){
+      const ly = lanesY[p.lane];
+      const sx = 40 + ((p.home*47)% (W-80));
+      return {x: sx, y: ly + Math.sin(phaseT*2 + p.home)*4};
+    }
+    if(ph==='scatter'){
+      const ang = (p.home*2.399) + phaseT*0.8;
+      const r = 120 + (p.home%11)*28 + Math.sin(phaseT+p.home)*20;
+      return {x: cx + Math.cos(ang)*r*1.35, y: cy + Math.sin(ang)*r*0.95};
+    }
+    // rebind — spiral into seal then hold
+    const ang = (p.home/N)*Math.PI*2 - phaseT*1.2;
+    const r = Math.max(12, 160 - phaseT*38) + (p.home%5)*6;
+    return {x: cx + Math.cos(ang)*r, y: cy + Math.sin(ang)*r*0.78};
+  }
+
+  function step(dt){
+    phaseT += dt;
+    if(phaseT > PHASE_LEN[phaseIdx]){
+      phaseT = 0;
+      phaseIdx = (phaseIdx+1)%PHASES.length;
+      phaseEl.textContent = PHASES[phaseIdx];
+    }
+    const ph = PHASES[phaseIdx];
+    // C ≤ S meter flicker when chaos high
+    const chaos = ph==='scatter' ? 1 : ph==='gather' ? 0.35 : 0.15;
+    cmpEl.textContent = chaos > 0.7 ? (Math.sin(phaseT*8)>0 ? '≤' : '≷') : '≤';
+    cmpEl.style.color = chaos > 0.7 ? '#FF5C5C' : '#F4F1EA';
+
+    for(const p of shards){
+      const tg = targetFor(p, ph);
+      const k = ph==='sort' ? 0.085 : ph==='rebind' ? 0.11 : 0.045;
+      p.vx += (tg.x - p.x)*k;
+      p.vy += (tg.y - p.y)*k;
+      p.vx *= 0.86; p.vy *= 0.86;
+      p.x += p.vx; p.y += p.vy;
+      p.rot += p.vr + (ph==='scatter'?0.03:0.008);
+      if(Math.random()<.08){
+        trails.push({x:p.x,y:p.y,life:1,c:p.c});
+      }
+    }
+    for(let i=trails.length-1;i>=0;i--){
+      trails[i].life -= dt*1.6;
+      if(trails[i].life<=0) trails.splice(i,1);
+    }
+    countEl.textContent = String(shards.length);
+  }
+
+  function drawGrid(){
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+    ctx.lineWidth = 1;
+    const g = 48;
+    const ox = (mx*20)%g, oy = (my*20)%g;
+    for(let x=-g;x<W+g;x+=g){ ctx.beginPath(); ctx.moveTo(x+ox,0); ctx.lineTo(x+ox,H); ctx.stroke(); }
+    for(let y=-g;y<H+g;y+=g){ ctx.beginPath(); ctx.moveTo(0,y+oy); ctx.lineTo(W,y+oy); ctx.stroke(); }
+    ctx.restore();
+  }
+
+  function drawLanes(ph){
+    if(ph!=='sort' && ph!=='gather') return;
+    ctx.save();
+    for(let i=0;i<lanesY.length;i++){
+      const y = lanesY[i];
+      ctx.strokeStyle = i%2 ? 'rgba(122,212,255,0.12)' : 'rgba(212,162,76,0.14)';
+      ctx.setLineDash([6,10]);
+      ctx.beginPath(); ctx.moveTo(24,y); ctx.lineTo(W-24,y); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = 'rgba(244,241,234,0.08)';
+      ctx.font = '10px ui-monospace,monospace';
+      ctx.fillText(String(i).padStart(2,'0'), 28, y-6);
+    }
+    ctx.restore();
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // void wash
+    const grd = ctx.createRadialGradient(W*0.5+mx*40, H*0.4+my*30, 20, W*0.5, H*0.45, Math.max(W,H)*0.7);
+    grd.addColorStop(0, '#121218');
+    grd.addColorStop(1, '#070708');
+    ctx.fillStyle = grd;
+    ctx.fillRect(0,0,W,H);
+
+    drawGrid();
+    const ph = PHASES[phaseIdx];
+    drawLanes(ph);
+
+    // trails
+    for(const tr of trails){
+      ctx.globalAlpha = tr.life*0.35;
+      ctx.fillStyle = tr.c;
+      ctx.fillRect(tr.x, tr.y, 2, 2);
+    }
+    ctx.globalAlpha = 1;
+
+    // connecting filaments during gather/rebind
+    if(ph==='gather' || ph==='rebind'){
+      ctx.save();
+      ctx.strokeStyle = 'rgba(212,162,76,0.08)';
+      ctx.lineWidth = 1;
+      for(let i=0;i<shards.length;i+=3){
+        const a = shards[i], b = shards[(i+7)%shards.length];
+        const dx=a.x-b.x, dy=a.y-b.y;
+        if(dx*dx+dy*dy < 140*140){
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+      }
+      ctx.restore();
+    }
+
+    for(const p of shards){
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot);
+      ctx.globalAlpha = p.a;
+      ctx.fillStyle = p.c;
+      ctx.strokeStyle = p.c;
+      ctx.lineWidth = 1;
+      if(p.kind==='chip'){
+        ctx.strokeRect(-p.w/2, -p.h/2, p.w, p.h);
+        ctx.globalAlpha = p.a*0.25;
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      } else {
+        ctx.fillRect(-p.w/2, -1.2, p.w, 2.4);
+        ctx.beginPath();
+        ctx.arc(p.w/2, 0, 2.2, 0, Math.PI*2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+    ctx.globalAlpha = 1;
+
+    // orbit dust
+    ctx.save();
+    const cx=W*0.5+mx*20, cy=H*0.42+my*12;
+    for(let i=0;i<24;i++){
+      const ang = i/24*Math.PI*2 + performance.now()*0.0003;
+      const r = 200 + Math.sin(performance.now()*0.001+i)*12;
+      ctx.globalAlpha = 0.2;
+      ctx.fillStyle = i%3? '#7AD4FF':'#D4A24C';
+      ctx.beginPath();
+      ctx.arc(cx+Math.cos(ang)*r, cy+Math.sin(ang)*r*0.7, 1.4, 0, Math.PI*2);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  let last = performance.now();
+  function frame(now){
+    const dt = Math.min(0.05, (now-last)/1000);
+    last = now;
+    step(dt);
+    draw();
+    requestAnimationFrame(frame);
+  }
+  phaseEl.textContent = PHASES[0];
+  requestAnimationFrame(frame);
+})();
+</script>
 </body>
 </html>
